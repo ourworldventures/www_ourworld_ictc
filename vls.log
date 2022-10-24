@@ -1598,4 +1598,103 @@ Result: {"jsonrpc":"2.0","id":140,"result":null}
 Params: {"jsonrpc":"2.0","id":141,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
 
 [Trace - 14:10:18] Sending response 'textDocument/documentSymbol - (141)' took 0ms
-Result: {"jsonrpc":"2.0","id":141,"result":[{"name":"render_ticket","kind":12,"deprecated":false,"location":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","range":{"start":{"l
+Result: {"jsonrpc":"2.0","id":141,"result":[{"name":"render_ticket","kind":12,"deprecated":false,"location":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","range":{"start":{"line":2,"character":7},"end":{"line":2,"character":20}}},"containerName":""}]}
+
+[Trace - 14:10:19] Received request 'textDocument/formatting - (142)'.
+Params: {"jsonrpc":"2.0","id":142,"method":"textDocument/formatting","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"},"options":{"tabSize":4,"insertSpaces":false}}}
+
+[Trace - 14:10:19] Sending response 'textDocument/formatting - (142)' took 14ms
+Result: {"jsonrpc":"2.0","id":142,"result":[{"range":{"start":{"line":2,"character":0},"end":{"line":6,"character":0}},"newText":"pub fn render_ticket(qr string) {\n\tslug := qr.all_after_last('_')\n\t$tmpl('./ticket.html')\n}\n"}]}
+
+[Trace - 14:10:19] Received notification 'textDocument/didSave'.
+Params: {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:10:19] Received notification 'workspace/didChangeWatchedFiles'.
+Params: {"jsonrpc":"2.0","method":"workspace/didChangeWatchedFiles","params":{"changes":[{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","type":2}]}}
+
+[Trace - 14:11:04] Received request 'textDocument/foldingRange - (143)'.
+Params: {"jsonrpc":"2.0","id":143,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:11:04] Sending response 'textDocument/foldingRange - (143)' took 0ms
+Result: {"jsonrpc":"2.0","id":143,"result":[{"startLine":2,"startCharacter":32,"endLine":5,"endCharacter":1,"kind":"region"}]}
+
+[Trace - 14:11:05] Received request 'textDocument/codeLens - (144)'.
+Params: {"jsonrpc":"2.0","id":144,"method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:11:05] Sending response 'textDocument/codeLens - (144)' took 0ms
+Result: {"jsonrpc":"2.0","id":144,"result":null}
+
+[Trace - 14:16:48] Received request 'textDocument/foldingRange - (145)'.
+Params: {"jsonrpc":"2.0","id":145,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:48] Sending response 'textDocument/foldingRange - (145)' took 0ms
+Result: {"jsonrpc":"2.0","id":145,"result":[{"startLine":2,"startCharacter":32,"endLine":5,"endCharacter":1,"kind":"region"}]}
+
+[Trace - 14:16:48] Received request 'textDocument/codeLens - (146)'.
+Params: {"jsonrpc":"2.0","id":146,"method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:48] Sending response 'textDocument/codeLens - (146)' took 0ms
+Result: {"jsonrpc":"2.0","id":146,"result":null}
+
+[Trace - 14:16:50] Received request 'textDocument/codeLens - (147)'.
+Params: {"jsonrpc":"2.0","id":147,"method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:50] Sending response 'textDocument/codeLens - (147)' took 0ms
+Result: {"jsonrpc":"2.0","id":147,"result":null}
+
+[Trace - 14:16:57] Received notification 'textDocument/didChange'.
+Params: {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","version":121},"contentChanges":[{"range":{"start":{"line":6,"character":0},"end":{"line":6,"character":0}},"rangeLength":0,"text":"\n"}]}}
+
+[Trace - 14:16:57] Sending notification 'textDocument/publishDiagnostics'.
+Params: {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","diagnostics":[]}}
+
+[Trace - 14:16:57] Sending notification 'textDocument/publishDiagnostics'.
+Params: {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","diagnostics":[]}}
+
+[Trace - 14:16:57] Received request 'textDocument/foldingRange - (148)'.
+Params: {"jsonrpc":"2.0","id":148,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:57] Sending response 'textDocument/foldingRange - (148)' took 0ms
+Result: {"jsonrpc":"2.0","id":148,"result":[{"startLine":2,"startCharacter":32,"endLine":5,"endCharacter":1,"kind":"region"}]}
+
+[Trace - 14:16:57] Received request 'textDocument/codeLens - (149)'.
+Params: {"jsonrpc":"2.0","id":149,"method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:57] Sending response 'textDocument/codeLens - (149)' took 0ms
+Result: {"jsonrpc":"2.0","id":149,"result":null}
+
+[Trace - 14:16:57] Received request 'textDocument/documentSymbol - (150)'.
+Params: {"jsonrpc":"2.0","id":150,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:16:57] Sending response 'textDocument/documentSymbol - (150)' took 0ms
+Result: {"jsonrpc":"2.0","id":150,"result":[{"name":"render_ticket","kind":12,"deprecated":false,"location":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","range":{"start":{"line":2,"character":7},"end":{"line":2,"character":20}}},"containerName":""}]}
+
+[Trace - 14:17:14] Received request 'textDocument/codeLens - (151)'.
+Params: {"jsonrpc":"2.0","id":151,"method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:17:14] Sending response 'textDocument/codeLens - (151)' took 0ms
+Result: {"jsonrpc":"2.0","id":151,"result":null}
+
+[Trace - 14:17:32] Received request 'textDocument/formatting - (152)'.
+Params: {"jsonrpc":"2.0","id":152,"method":"textDocument/formatting","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"},"options":{"tabSize":4,"insertSpaces":false}}}
+
+[Trace - 14:17:32] Sending response 'textDocument/formatting - (152)' took 55ms
+Result: {"jsonrpc":"2.0","id":152,"result":[{"range":{"start":{"line":2,"character":0},"end":{"line":7,"character":0}},"newText":"pub fn render_ticket(qr string) {\n\tslug := qr.all_after_last('_')\n\t$tmpl('./ticket.html')\n}\n"}]}
+
+[Trace - 14:17:32] Received notification 'textDocument/didChange'.
+Params: {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","version":122},"contentChanges":[{"range":{"start":{"line":6,"character":0},"end":{"line":7,"character":0}},"rangeLength":1,"text":""}]}}
+
+[Trace - 14:17:32] Sending notification 'textDocument/publishDiagnostics'.
+Params: {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","diagnostics":[]}}
+
+[Trace - 14:17:33] Received notification 'textDocument/didSave'.
+Params: {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v"}}}
+
+[Trace - 14:17:33] Sending notification 'textDocument/publishDiagnostics'.
+Params: {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","diagnostics":[]}}
+
+[Trace - 14:17:33] Sending notification 'textDocument/publishDiagnostics'.
+Params: {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///Users/timurgordon/code/github/ourworld-tsc/www_ourworld_ictc/ticket.v","diagnostics":[]}}
+
+[Trace - 14:17:33] Received notification 'workspace/didChangeWatchedFiles'.
+Params: {"jsonrpc":"2.0","method":"workspace/didChangeWatchedFiles","pa
