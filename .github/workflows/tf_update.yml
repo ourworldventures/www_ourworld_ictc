@@ -10,12 +10,12 @@ jobs:
     steps:
     - name: pushing latest change on event2.ourworld.tf
       uses: appleboy/ssh-action@master
-      continue-on-error: true
       with:
         host: event2.ourworld.tf
         username: webuser
         key: ${{ secrets.TF_SECRET }}
         port: 34022
+        continue-on-error: true
         script: |
           cd /home/webuser/websites/www2/www_ourworld_ictc
           git log -1
