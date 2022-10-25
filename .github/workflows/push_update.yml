@@ -18,5 +18,5 @@ jobs:
         script: |
           cd /home/webuser/websites/www2/www_ourworld_ictc
           name=$(basename "$PWD")
-          tmux kill-session -t $name
+          tmux kill-session -t $name > /dev/null 2>&1
           tmux new-session -d -s $name 'bash run.sh'
