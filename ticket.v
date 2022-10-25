@@ -53,3 +53,9 @@ pub fn (mut app App) tickets() vweb.Result {
 pub fn (mut app App) index() vweb.Result {
 	return $vweb.html()
 }
+
+['/:slug']
+pub fn (mut app App) register(slug string) vweb.Result {
+	println('debugz: $slug')
+	return $vweb.html()
+}
