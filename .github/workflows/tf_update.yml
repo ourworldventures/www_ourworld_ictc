@@ -10,6 +10,7 @@ jobs:
     steps:
     - name: pushing latest change on event2.ourworld.tf
       uses: appleboy/ssh-action@master
+      continue-on-error: true
       with:
         host: event2.ourworld.tf
         username: webuser
