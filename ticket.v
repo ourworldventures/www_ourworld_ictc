@@ -2,6 +2,7 @@ module main
 
 import vweb
 import os
+import json
 
 pub fn ticket_front(qr string) string {
 	slug := qr.all_after_last('_')
@@ -47,16 +48,35 @@ pub fn main() {
 	vweb.run(app, 8000)
 }
 
-pub fn (mut app App) tickets() vweb.Result {
-	return $vweb.html()
-}
 
 pub fn (mut app App) index() vweb.Result {
 	return $vweb.html()
 }
 
-['/:slug']
-pub fn (mut app App) register(slug string) vweb.Result {
-	println('debugz: $slug')
+pub struct Registration {
+	name string
+	email string
+	org_website string
+	plus_one string
+	receive_communication string
+}
+
+pub fn (mut app App) exists() vweb.Result {
+	return $vweb.html()
+}
+
+['/register'; post]
+pub fn (mut app App) register(name string, email string, org_website string, plus_one string, receive_communication string) vweb.Result {
+	println(app.req.data)
+	registration :=	Registration {
+		name: name,
+		email: email,
+		org_website: org_website,
+		plus_one: plus_one,
+		receive_communication: receive_communication,
+	}
+	path := 'registrations/${email}.txt'
+	if os.exists(path) { return app.exists()}
+	os.write_file(path, json.encode(registration)) or {println('error')}
 	return $vweb.html()
 }
