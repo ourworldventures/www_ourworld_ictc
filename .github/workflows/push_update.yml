@@ -17,5 +17,6 @@ jobs:
         port: 34022
         script: |
           cd /home/webuser/websites/www2/www_ourworld_ictc
-          git log -1
-          git pull
+          name=$(basename "$PWD")
+          tmux has-session -t $name > /dev/null 2>&1
+          if [ $? != 0 ]; then tmux new-session -d -s $name 'bash run.sh' ; else tmux kill-session -t $name ; tmux new-session -d -s $name 'bash run.sh' ; fi
