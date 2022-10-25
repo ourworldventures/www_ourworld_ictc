@@ -19,3 +19,4 @@ jobs:
           cd /home/webuser/websites/www2/www_ourworld_ictc
           git log -1
           git pull
+          bash start
