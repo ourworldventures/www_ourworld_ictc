@@ -20,3 +20,4 @@ jobs:
           name=$(basename "$PWD")
           tmux has-session -t $name > /dev/null 2>&1
           if [ $? != 0 ]; then tmux new-session -d -s $name 'bash run.sh' ; else tmux kill-session -t $name ; tmux new-session -d -s $name 'bash run.sh' ; fi
+          sleep 100
