@@ -17,8 +17,9 @@ pub fn new_app() &App {
 }
 
 pub fn main() {
-	mut app := new_app()
-	vweb.run(app, 8000)
+	// mut app := new_app()
+	// vweb.run(app, 8000)
+	get_emails_from_dir('registrations')?
 }
 
 
@@ -27,12 +28,12 @@ pub fn (mut app App) index() vweb.Result {
 }
 
 pub struct Registration {
-	name string
-	email string
-	org_website string
-	plus_one string
+	name                  string
+	email                 string
+	org_website           string
+	plus_one              string
 	receive_communication string
-	timestamp time.Time
+	timestamp             i64
 }
 
 pub fn (mut app App) exists() vweb.Result {
@@ -70,7 +71,7 @@ pub fn (mut app App) register(name string, email string, org_website string, plu
 		org_website: org_website,
 		plus_one: plus_one,
 		receive_communication: receive_communication,
-		timestamp: time.now()
+		timestamp: time.now().unix_time()
 	}
 	path := 'registrations/${email}.txt'
 	if os.exists(path) { return app.exists()}
@@ -97,3 +98,25 @@ pub fn (mut app App) registrations() vweb.Result {
 	}
 	return app.html(resp)
 }
+
+
+pub fn get_emails_from_dir (path string) ?string {
+
+	mut emails := []string
+
+	mut files := os.ls(path)?// returns an array of strings
+
+	for file in files {
+		mut content := os.read_file('registrations/$file') or {'error'}
+		registration := json.decode(Registration, content)?
+		emails << registration.email
+	}
+
+	emails_string := emails.join(', ')
+
+	println(emails_string)
+
+	return emails_string
+
+}
+
