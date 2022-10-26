@@ -57,7 +57,7 @@ pub fn (mut app App) register(name string, email string, org_website string, plu
 	if files.len > 1000 {
 		return app.full()
 	}
-	if email.len < 5 && !email.contains('@') && !email.contains('.') {
+	if email.len < 5 || !email.contains('@') || !email.contains('.') {
 		return app.emailreq()
 	}
 	if email.len > 100 || name.len > 100 || org_website.len > 200 || email.contains('<script>') || name.contains('<script>') || org_website.contains('<script>'){
@@ -79,4 +79,21 @@ pub fn (mut app App) register(name string, email string, org_website string, plu
 		return app.full()
 	}
 	return $vweb.html()
+}
+
+
+pub fn (mut app App) registrations() vweb.Result {
+	key := os.getenv('ACCESS_KEY')
+	password := app.get_header('password')
+	if password != key {
+		return app.html('not authorized')
+	}
+	path := 'registrations'
+	files := os.ls(path) or { [] }
+	mut resp := 'Total registrations: $files.len \n'
+	for file in files {
+		content := os.read_file('registrations/$file') or {'error'}
+		resp += content
+	}
+	return app.html(resp)
 }
