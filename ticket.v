@@ -43,12 +43,27 @@ pub fn (mut app App) full() vweb.Result {
 	return $vweb.html()
 }
 
+pub fn (mut app App) emailreq() vweb.Result {
+	return $vweb.html()
+}
+
+pub fn (mut app App) invalid() vweb.Result {
+	return $vweb.html()
+}
+
 ['/register'; post]
 pub fn (mut app App) register(name string, email string, org_website string, plus_one string, receive_communication string) vweb.Result {
 	files := os.ls('registrations') or { [] }
-	// if files.len > 1000 {
-	// 	return full()
-	// }
+	if files.len > 1000 {
+		return app.full()
+	}
+	if email.len < 5 && !email.contains('@') && !email.contains('.') {
+		return app.emailreq()
+	}
+	if email.len > 100 || name.len > 100 || org_website.len > 200 || email.contains('<script>') || name.contains('<script>') || org_website.contains('<script>'){
+		return app.invalid()
+	}
+
 	registration :=	Registration {
 		name: name,
 		email: email,

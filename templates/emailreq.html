@@ -1,0 +1,56 @@
+
+              <form hx-post="/register" class="mt-3 sm:flex flex-col">
+                  <div>
+                    <div class="md:flex">
+                        <div class="flex-col md:mr-2">
+                            <label for="name" class="block text-sm font-medium leading-5 text-gray-700">Name</label>
+                            <input id="name" name="name" aria-label="Name" class="appearance-none block w-full mt-1 px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Name Surname" />
+                        </div>
+                        <div class="md:ml-2">
+                        <label for="company_website" class="block text-sm font-medium leading-5 text-gray-700">Organization Website</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-base sm:leading-5">
+                              http://
+                            </span>
+                          </div>
+                          <input id="company_website" name="org_website" class="form-input pl-16 sm:pl-14 appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="www.example.com" />
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="mt-3 sm:flex">
+                        <input aria-label="Email" name="email" class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Enter your email" />
+                        <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                            Register
+                        </button>
+                    </div>
+                    <div class="relative mt-4 flex">
+                        <div class="flex items-center h-5">
+                          <input id="settings-option-0" name="plus_one" type="checkbox" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer" />
+                        </div>
+                        <label for="settings-option-0" class="ml-3 flex flex-col cursor-pointer">
+                          <!-- On: "text-indigo-900", Off: "text-gray-900" -->
+                          <span class="block text-sm leading-5 font-normal">
+                            I want to register a plus one to join the event.
+                          </span>
+                        </label>
+                      </div>
+                    <div class="relative mt-4 flex">
+                        <div class="flex items-center h-5">
+                          <input id="settings-option-1" name="receive_communication" type="checkbox" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer" checked />
+                        </div>
+                        <label for="settings-option-1" class="ml-3 flex flex-col cursor-pointer">
+                          <!-- On: "text-indigo-900", Off: "text-gray-900" -->
+                          <span class="block text-sm leading-5 font-normal">
+                            I want to receive communication and e-mails about Ourworld. 
+                          </span>
+                        </label>
+                      </div>
+                      <div class="relative pt-6 text-red-600 font-medium">
+                        Email is required to registered for event. Please try again.
+                  </div>
+              </form>
+
+
+  
